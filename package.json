@@ -1,0 +1,17 @@
+{
+  "name": "com.ciaogames.rewardcenter",
+  "displayName":"RewardCenter",
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "unityRelease": "62f3",
+  "description": "Unity SDK for in-game offerwall campaign progress.",
+  "dependencies": {
+  },
+  "author": {
+    "name": "Ciao Games",
+    "url": "https://www.ciao.games",
+    "email": "support@ciao.games"
+  },
+  "changelogUrl": "https://docs.ciao.games/docs/change-log",
+  "documentationUrl": "https://docs.ciao.games/"
+}

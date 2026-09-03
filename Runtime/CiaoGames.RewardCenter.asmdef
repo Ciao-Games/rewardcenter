@@ -1,7 +1,9 @@
 {
     "name": "CiaoGames.RewardCenter",
     "rootNamespace": "CiaoGames.RewardCenter",
-    "references": [],
+    "references": [
+       "Unity.TextMeshPro"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

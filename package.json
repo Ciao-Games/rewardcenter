@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "unity": "2022.3",
   "unityRelease": "62f3",
+  "license": "Apache-2.0",
   "description": "Unity SDK for in-game offerwall campaign progress.",
   "dependencies": {
   },

@@ -1,7 +1,7 @@
 {
   "name": "com.ciaogames.rewardcenter",
   "displayName":"RewardCenter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "unity": "2022.3",
   "unityRelease": "62f3",
   "license": "Apache-2.0",

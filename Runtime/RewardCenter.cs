@@ -53,11 +53,11 @@ namespace CiaoGames.RewardCenter
         }
 
         /// <summary> Report an event </summary>
-        /// <param name="eventName"></param> <param name="value"></param>
-        public static void ReportEvent(string eventName, int value = -1)
+        /// <param name="eventName"></param>
+        public static void ReportEvent(string eventName)
         {
             if (!InitializationCheck()) return;
-            _eventRouter.ReportEvent(eventName, value);
+            _eventRouter.ReportEvent(eventName);
         }
         
         public static void MarkWelcomeShown()

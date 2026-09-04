@@ -12,4 +12,4 @@ TBD (Unity Package Manager via git URL).
 
 ## License
 
-Proprietary. Ciao Games.
+Apache License. Ciao Games.

@@ -59,7 +59,7 @@ namespace CiaoGames.RewardCenter
             }
 
             var milestone = milestones[index];
-            RewardCenter.ReportEvent(milestone.eventName, milestone.targetValue);
+            RewardCenter.ReportEvent(milestone.eventName);
         }
     }
 }

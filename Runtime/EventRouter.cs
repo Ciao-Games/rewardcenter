@@ -15,7 +15,7 @@ namespace CiaoGames.RewardCenter
             _stateStore = stateStore;
         }
         
-        public void ReportEvent(string eventName, int targetValue)
+        public void ReportEvent(string eventName)
         {
             if (string.IsNullOrEmpty(eventName)) return;
             var campaign = _stateStore.State?.activeCampaign;
@@ -26,7 +26,6 @@ namespace CiaoGames.RewardCenter
             {
                 if (milestone.isCompleted) continue;
                 if (milestone.eventName != eventName) continue;
-                if (targetValue != -1 && milestone.targetValue != targetValue) continue;
                 
                 SetMilestoneCompleted(milestone);
                 completedMilestone = milestone;

@@ -16,7 +16,6 @@ namespace CiaoGames.RewardCenter
 
         [SerializeField] private RewardCenterTestData _testData;
         private string _eventName = "level_completed";
-        private int _eventValue = 5;
 
         [MenuItem("Ciao Games/Reward Center/Test Window")]
         public static void ShowWindow()
@@ -81,10 +80,9 @@ namespace CiaoGames.RewardCenter
                 EditorGUILayout.Space();
                 EditorGUILayout.LabelField("Report Event", EditorStyles.miniBoldLabel);
                 _eventName = EditorGUILayout.TextField("Event Name", _eventName);
-                _eventValue = EditorGUILayout.IntField("Value", _eventValue);
                 if (GUILayout.Button("Report Event"))
                 {
-                    RewardCenter.ReportEvent(_eventName, _eventValue);
+                    RewardCenter.ReportEvent(_eventName);
                 }
             }
 

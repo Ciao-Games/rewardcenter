@@ -49,7 +49,6 @@ namespace CiaoGames.RewardCenter
             {
                 eventName = payload.e,
                 description = payload.d,
-                targetValue = payload.t,
                 rewardAmount = payload.r
             };
         }

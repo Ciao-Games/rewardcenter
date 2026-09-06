@@ -1,6 +1,6 @@
 using System;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary> Root persisted object at Application.persistentDataPath. </summary>
     [Serializable]

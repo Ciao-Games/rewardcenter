@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     public class EventRouter
     {

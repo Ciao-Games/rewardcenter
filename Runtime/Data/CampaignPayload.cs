@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary> Wire-format representation of a campaign as delivered via deep link or config JSON.</summary>
     [Serializable]

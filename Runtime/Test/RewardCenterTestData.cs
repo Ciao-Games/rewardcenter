@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary>
     /// Reusable test data for SDK integration testing. Create instances via

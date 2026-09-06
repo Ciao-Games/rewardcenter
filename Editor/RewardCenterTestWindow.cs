@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary>
     /// Editor tester for the Reward Center SDK. Menu: Ciao Games > Reward Center > Test Window.

@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary>
     /// Runtime test helpers. Callable from Editor tools and from in-game QA buttons alike.

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CiaoGames.RewardCenter.UI
+namespace Ciao.RC.UI
 {
     /// <summary>
     /// The tracker card that lives in the studio's menu layout while a campaign is active.

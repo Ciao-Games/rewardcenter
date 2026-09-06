@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CiaoGames.RewardCenter.UI
+namespace Ciao.RC.UI
 {
     /// <summary>
     /// Full-screen celebration shown when a milestone is completed.

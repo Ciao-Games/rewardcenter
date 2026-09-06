@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     public static class RewardCenterLogger
     {

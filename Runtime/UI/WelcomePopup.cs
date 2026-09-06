@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CiaoGames.RewardCenter.UI
+namespace Ciao.RC.UI
 {
     /// <summary>
     /// The welcome popup shown on first activation of a campaign.

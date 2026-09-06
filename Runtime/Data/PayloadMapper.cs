@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary> Converts wire-format payloads (short-key DTOs) into runtime models. </summary>
     public static class PayloadMapper

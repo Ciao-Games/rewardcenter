@@ -1,4 +1,4 @@
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     public enum LogLevel
     {

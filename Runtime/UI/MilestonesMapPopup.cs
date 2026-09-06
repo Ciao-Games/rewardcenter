@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CiaoGames.RewardCenter.UI
+namespace Ciao.RC.UI
 {
     /// <summary>
     /// The full milestones map popup. Opens when the tracker is tapped, or automatically

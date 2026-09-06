@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary>  Parses a deeplink URL: Inline & Reference mode
     /// - Inline: campaign JSON is URL-encoded in the "payload" query param

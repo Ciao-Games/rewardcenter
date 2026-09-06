@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter.UI
+namespace Ciao.RC.UI
 {
     /// <summary>
     /// Coordinator for the RewardCenterOverlay prefab. Manages the full-screen dimmer,

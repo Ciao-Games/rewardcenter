@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary>
     /// Simple coroutine-based tween utility with no external dependencies.

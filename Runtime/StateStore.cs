@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary> Loads and saves <see cref="RewardCenterState"/> as JSON at Application.persistentDataPath. </summary>
     public class StateStore

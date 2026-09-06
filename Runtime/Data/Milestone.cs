@@ -1,6 +1,6 @@
 using System;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary> A single offer step within a campaign.  </summary>
     [Serializable]

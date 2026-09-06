@@ -1,9 +1,8 @@
-
 using System;
 using System.Globalization;
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     public static class RewardCenter
     {

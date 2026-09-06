@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     [CreateAssetMenu(fileName = nameof(RewardCenterConfig), menuName = "Ciao Games/Reward Center Config")]
     public class RewardCenterConfig : ScriptableObject

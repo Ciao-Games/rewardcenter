@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace CiaoGames.RewardCenter.UI
+namespace Ciao.RC.UI
 {
     public abstract class CelebrationPopupBase : MonoBehaviour
     {

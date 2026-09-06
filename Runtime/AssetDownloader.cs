@@ -1,9 +1,8 @@
 using System;
 using System.IO;
-using UnityEngine;
 using UnityEngine.Networking;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary>
     /// Downloads and caches remote campaign assets (publisher logo, currency icon) to Application.persistentDataPath.

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CiaoGames.RewardCenter
+namespace Ciao.RC
 {
     /// <summary> An active offerwall campaign. Parsed from a deep link, persisted locally. </summary>
     [Serializable]

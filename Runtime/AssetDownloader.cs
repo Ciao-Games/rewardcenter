@@ -36,12 +36,14 @@ namespace Ciao.RC
         {
             if (string.IsNullOrEmpty(url))
             {
+                RewardCenterLogger.Log(ClassName, $"Skipping download of empty URL: {url}");
                 onDone?.Invoke();
                 return;
             }
 
             if (File.Exists(localPath))
             {
+                RewardCenterLogger.Log(ClassName, $"File exists: {localPath}");
                 onDone?.Invoke();
                 return;
             }
@@ -56,7 +58,11 @@ namespace Ciao.RC
                     if (request.result != UnityWebRequest.Result.Success)
                         RewardCenterLogger.LogWarning(ClassName, $"Asset fetch failed for {url}: {request.error}");
                     else
+                    {
                         File.WriteAllBytes(localPath, request.downloadHandler.data);
+                        RewardCenterLogger.Log(ClassName, $"Asset Saved: {localPath}");
+                    }
+                        
                 }
                 catch (Exception e)
                 {
@@ -68,6 +74,12 @@ namespace Ciao.RC
                     onDone?.Invoke();
                 }
             };
+        }
+        
+        public void ClearCachedAssets()
+        {
+            if (File.Exists(AssetPaths.PublisherLogo)) File.Delete(AssetPaths.PublisherLogo);
+            if (File.Exists(AssetPaths.CurrencyIcon)) File.Delete(AssetPaths.CurrencyIcon);
         }
     }
 }

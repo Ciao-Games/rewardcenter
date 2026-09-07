@@ -136,6 +136,7 @@ namespace Ciao.RC
             _stateStore.ResetState();
             _stateStore.SetCampaign(campaign);
             _stateStore.Save();
+            _assetDownloader.ClearCachedAssets();
             _assetDownloader.DownloadAssets(campaign, () => OnCampaignActivated?.Invoke(campaign));
         }
         

@@ -35,6 +35,30 @@ namespace Ciao.RC
             var path = Path.Combine(Application.persistentDataPath, StateFileName);
             EditorUtility.RevealInFinder(File.Exists(path) ? path : Application.persistentDataPath);
         }
+        
+        [MenuItem("Ciao Games/Reward Center/Copy Prefabs to Assets")]
+        public static void CopyPrefabsToAssets()
+        {
+            const string sourceDir = "Packages/com.ciaogames.rewardcenter/Runtime/Prefabs";
+            const string destDir = "Assets/RewardCenter/Prefabs";
+
+            if (!AssetDatabase.IsValidFolder(destDir))
+            {
+                Directory.CreateDirectory(destDir);
+                AssetDatabase.Refresh();
+            }
+
+            var files = Directory.GetFiles(sourceDir, "*.prefab");
+            foreach (var src in files)
+            {
+                var filename = Path.GetFileName(src);
+                var dest = Path.Combine(destDir, filename);
+                AssetDatabase.CopyAsset(src, dest);
+            }
+
+            AssetDatabase.Refresh();
+            Debug.Log($"[RewardCenter] Copied {files.Length} prefabs to {destDir}");
+        }
 
         private void OnGUI()
         {

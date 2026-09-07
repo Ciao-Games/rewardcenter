@@ -42,7 +42,11 @@ namespace Ciao.RC.UI
             {
                 currencyIcon.sprite = currencyIconSprite;
                 currencyIcon.preserveAspect = true;
+            } else if (currencyIcon != null)
+            {
+                currencyIcon.gameObject.SetActive(false);
             }
+            
 
             if (amountText != null)
                 amountText.text = $"{earnedAmount:0}";

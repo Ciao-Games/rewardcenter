@@ -24,11 +24,22 @@ namespace Ciao.RC.UI
             if (milestone == null) return;
 
             SetDescriptionText(milestone, currencyName);
-            if (rewardCurrencyIcon != null && currencyIconSprite != null)
+            bool hasIcon = rewardCurrencyIcon != null && currencyIconSprite != null;
+            if (hasIcon)
+            {
                 rewardCurrencyIcon.sprite = currencyIconSprite;
-
+                rewardCurrencyIcon.gameObject.SetActive(true);
+            }else if (rewardCurrencyIcon != null)
+            {
+                rewardCurrencyIcon.gameObject.SetActive(false);
+            }
+           
             if (rewardAmountText != null)
-                rewardAmountText.text = $"+{milestone.rewardAmount:0}";
+            {
+                rewardAmountText.text = hasIcon
+                    ? $"+{milestone.rewardAmount:0}"
+                    : $"+{milestone.rewardAmount:0} {currencyName}";
+            }
 
             if (celebrationVisuals != null)
             {

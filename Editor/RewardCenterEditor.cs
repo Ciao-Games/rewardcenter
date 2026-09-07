@@ -9,10 +9,8 @@ namespace Ciao.RC
     /// Delegates all work to <see cref="RewardCenterTester"/> so behavior is identical to
     /// in-game QA buttons.
     /// </summary>
-    public class RewardCenterTestWindow : EditorWindow
+    public class RewardCenterEditor : EditorWindow
     {
-        private const string StateFileName = "reward_center_state.json";
-        private const string AssetsFolder = "rewardcenter/assets";
 
         [SerializeField] private RewardCenterTestData _testData;
         private string _eventName = "level_completed";
@@ -20,7 +18,8 @@ namespace Ciao.RC
         [MenuItem("Ciao Games/Reward Center/Test Window")]
         public static void ShowWindow()
         {
-            GetWindow<RewardCenterTestWindow>("Reward Center Tester");
+            GetWindow<RewardCenterEditor>("Reward Center Tester");
+            GetWindow<RewardCenterEditor>("Reward Center Tester");
         }
 
         [MenuItem("Ciao Games/Reward Center/Clear State")]
@@ -32,32 +31,89 @@ namespace Ciao.RC
         [MenuItem("Ciao Games/Reward Center/Open State File")]
         public static void OpenStateFile()
         {
-            var path = Path.Combine(Application.persistentDataPath, StateFileName);
+            var path = Path.Combine(Application.persistentDataPath, RewardCenterConstants.StateFileName);
             EditorUtility.RevealInFinder(File.Exists(path) ? path : Application.persistentDataPath);
         }
         
         [MenuItem("Ciao Games/Reward Center/Copy Prefabs to Assets")]
         public static void CopyPrefabsToAssets()
         {
-            const string sourceDir = "Packages/com.ciaogames.rewardcenter/Runtime/Prefabs";
-            const string destDir = "Assets/RewardCenter/Prefabs";
-
-            if (!AssetDatabase.IsValidFolder(destDir))
+            if (!AssetDatabase.IsValidFolder(RewardCenterConstants.PrefabsDestDir))
             {
-                Directory.CreateDirectory(destDir);
+                Directory.CreateDirectory(RewardCenterConstants.PrefabsDestDir);
                 AssetDatabase.Refresh();
             }
 
-            var files = Directory.GetFiles(sourceDir, "*.prefab");
+            var files = Directory.GetFiles(RewardCenterConstants.PrefabsSourceDir, "*.prefab");
             foreach (var src in files)
             {
                 var filename = Path.GetFileName(src);
-                var dest = Path.Combine(destDir, filename);
+                var dest = Path.Combine(RewardCenterConstants.PrefabsDestDir, filename);
                 AssetDatabase.CopyAsset(src, dest);
             }
 
             AssetDatabase.Refresh();
-            Debug.Log($"[RewardCenter] Copied {files.Length} prefabs to {destDir}");
+            Debug.Log($"[RewardCenter] Copied {files.Length} prefabs to {RewardCenterConstants.PrefabsDestDir}");
+        }
+        
+        [MenuItem("Ciao Games/Reward Center/Create Config File")]
+        public static void CreateConfig()
+        {
+            var path = Path.Combine(RewardCenterConstants.ResourcesDir, RewardCenterConstants.ConfigResourceName + ".asset");
+
+            var existing = AssetDatabase.LoadAssetAtPath<RewardCenterConfig>(path);
+            if (existing != null)
+            {
+                Selection.activeObject = existing;
+                EditorGUIUtility.PingObject(existing);
+                Debug.Log($"[RewardCenter] Config already exists at {path}");
+                return;
+            }
+
+            if (!Directory.Exists(RewardCenterConstants.ResourcesDir))
+            {
+                Directory.CreateDirectory(RewardCenterConstants.ResourcesDir);
+                AssetDatabase.Refresh();
+            }
+
+            var config = ScriptableObject.CreateInstance<RewardCenterConfig>();
+            AssetDatabase.CreateAsset(config, path);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            Selection.activeObject = config;
+            EditorGUIUtility.PingObject(config);
+            Debug.Log($"[RewardCenter] Created config at {path}");
+        }
+        
+        [MenuItem("Ciao Games/Reward Center/Create Test Data File")]
+        public static void CreateTestDataFile()
+        {
+            var path = Path.Combine(RewardCenterConstants.ResourcesDir, RewardCenterConstants.TestDataFileName + ".asset");
+
+            var existing = AssetDatabase.LoadAssetAtPath<RewardCenterTestData>(path);
+            if (existing != null)
+            {
+                Selection.activeObject = existing;
+                EditorGUIUtility.PingObject(existing);
+                Debug.Log($"[RewardCenter] Test Data already exists at {path}");
+                return;
+            }
+
+            if (!Directory.Exists(RewardCenterConstants.ResourcesDir))
+            {
+                Directory.CreateDirectory(RewardCenterConstants.ResourcesDir);
+                AssetDatabase.Refresh();
+            }
+
+            var config = ScriptableObject.CreateInstance<RewardCenterTestData>();
+            AssetDatabase.CreateAsset(config, path);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            Selection.activeObject = config;
+            EditorGUIUtility.PingObject(config);
+            Debug.Log($"[RewardCenter] Created config at {path}");
         }
 
         private void OnGUI()

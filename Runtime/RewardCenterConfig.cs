@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Ciao.RC
 {
-    [CreateAssetMenu(fileName = nameof(RewardCenterConfig), menuName = "Ciao Games/Reward Center Config")]
+    [CreateAssetMenu(fileName = nameof(RewardCenterConfig), menuName = "Ciao Games/Reward Center/Reward Center Config")]
     public class RewardCenterConfig : ScriptableObject
     {
         [Header("Logging")]

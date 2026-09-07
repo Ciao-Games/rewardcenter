@@ -31,15 +31,26 @@ namespace Ciao.RC.UI
                 descriptionText.color = milestone.isCompleted ? completedTextColor : notCompletedTextColor;
             }
 
-            if (rewardText != null)
-                rewardText.text = $"+{milestone.rewardAmount:N0} ";
-            
-            if (currencyIcon != null)
+            bool hasIcon = currencyIcon != null && currencyIconSprite != null;
+            if (hasIcon)
             {
-                if (currencyIconSprite != null)
-                    currencyIcon.sprite = currencyIconSprite;
-                currencyIcon.preserveAspect = true;
+                currencyIcon.sprite = currencyIconSprite;
+                currencyIcon.gameObject.SetActive(true);
+            } 
+            else if (currencyIcon != null)
+            {
+                currencyIcon.gameObject.SetActive(false);
             }
+            
+            if (rewardText != null)
+            {
+                rewardText.text = hasIcon
+                    ? $"+{milestone.rewardAmount:N0}"
+                    : $"+{milestone.rewardAmount:0} {RewardCenter.CurrencyName}";
+            }
+            
+            
+           
             if (notCompletedIndicator != null)
                 notCompletedIndicator.SetActive(!milestone.isCompleted);
             if (completedIndicator != null)

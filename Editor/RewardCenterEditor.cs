@@ -115,6 +115,10 @@ namespace Ciao.RC
             EditorGUIUtility.PingObject(config);
             Debug.Log($"[RewardCenter] Created config at {path}");
         }
+        
+        [MenuItem("Ciao Games/Reward Center/Documentation")]
+        internal static void OpenDocumentation()
+            => Application.OpenURL(RewardCenterConstants.DocumentationUrl);
 
         private void OnGUI()
         {

@@ -4,7 +4,7 @@ Unity SDK for in-game offerwall campaign progress. Deep link driven, no backend.
 
 ## Status
 
-Early development. Not yet released.
+Early development.
 
 ## Installation
 

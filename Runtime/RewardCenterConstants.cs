@@ -21,5 +21,8 @@ namespace Ciao.RC
         public const string PrefabsDestDir = "Assets/RewardCenter/Prefabs";
         public const string ResourcesDir = "Assets/RewardCenter/Resources";
         
+        // Documentation
+        public const string DocumentationUrl = "https://docs.ciao.games/docs/reward-center";
+        
     }
 }

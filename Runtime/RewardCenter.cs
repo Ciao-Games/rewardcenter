@@ -17,6 +17,7 @@ namespace Ciao.RC
         
         // Events
         public static event Action<Campaign> OnCampaignActivated;
+        public static event Action<Campaign> OnCampaignFirstActivated;
         public static event Action<Milestone> OnMilestoneCompleted;
         
         public static bool IsInitialized => _isInitialized;
@@ -137,7 +138,11 @@ namespace Ciao.RC
             _stateStore.SetCampaign(campaign);
             _stateStore.Save();
             _assetDownloader.ClearCachedAssets();
-            _assetDownloader.DownloadAssets(campaign, () => OnCampaignActivated?.Invoke(campaign));
+            _assetDownloader.DownloadAssets(campaign, () =>
+            {
+                OnCampaignActivated?.Invoke(campaign);
+                OnCampaignFirstActivated?.Invoke(campaign);
+            });
         }
         
         private static void SetLogger()

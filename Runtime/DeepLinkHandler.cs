@@ -34,7 +34,7 @@ namespace Ciao.RC
             }
 
             // Check if valid deeplink
-            if (!query.ContainsKey(RewardCenterConstants.QueryCampaignId))
+            if (!query.ContainsKey(RewardCenterConstants.RewardCenterIdentifier))
             {
                 onComplete?.Invoke(null);
                 return;

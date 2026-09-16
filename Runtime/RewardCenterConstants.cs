@@ -11,7 +11,7 @@ namespace Ciao.RC
         public const string TestDataFileName = "RewardCenterTestData";
         
         // HTTP
-        public const string QueryCampaignId = "cid";
+        public const string RewardCenterIdentifier = "rwc_cid";
         public const string QueryPayload = "payload";
         public const string QueryConfigUrl = "config_url";
         public const int HttpTimeoutSeconds = 5;

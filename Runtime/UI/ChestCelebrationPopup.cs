@@ -51,7 +51,7 @@ namespace Ciao.RC.UI
                 rewardCurrencyIcon.sprite = currencyIconSprite;
 
             if (rewardAmountText != null)
-                rewardAmountText.text = $"+{milestone.rewardAmount:0}";
+                rewardAmountText.text = $"+{milestone.rewardAmount}";
 
             if (rewardReveal != null) rewardReveal.SetActive(false);
             if (celebrationVisuals != null) celebrationVisuals.SetActive(false);

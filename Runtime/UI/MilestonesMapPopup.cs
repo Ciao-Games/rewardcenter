@@ -26,6 +26,11 @@ namespace Ciao.RC.UI
         [Header("Milestones List")]
         [SerializeField] private Transform milestonesListParent;
         [SerializeField] private GameObject milestoneRowPrefab;
+
+
+        [SerializeField] private string completedText = "Completed!";
+        [SerializeField] private string expiredText = "Expired";
+        [SerializeField] private string noExpirationText = "No expiry";
         
         public event Action OnContinueClicked;
         
@@ -62,7 +67,7 @@ namespace Ciao.RC.UI
                 }
                 if (rewardsEarnedText != null)
                 {
-                    rewardsEarnedText.text = $"{RewardCenter.CurrencyName} earned:\n<color=#{ColorUtility.ToHtmlStringRGB(completedColor)}>{RewardCenter.EarnedRewardAmount:0}</color> / {RewardCenter.TotalRewardAmount:0}";
+                    rewardsEarnedText.text = $"{RewardCenter.CurrencyName} earned:\n<color=#{ColorUtility.ToHtmlStringRGB(completedColor)}>{RewardCenter.EarnedRewardAmount}</color> / {RewardCenter.TotalRewardAmount}";
                 }
 
                 PopulateRows(campaign, currencyIconSprite);
@@ -76,17 +81,17 @@ namespace Ciao.RC.UI
             gameObject.SetActive(false);
         }
         
-        private static string GetDaysRemainingText(Campaign campaign)
+        private string GetDaysRemainingText(Campaign campaign)
         {
-            if (campaign.isCompleted) return "Completed!";
+            if (campaign.isCompleted) return completedText;
 
-            if (string.IsNullOrEmpty(campaign.expiresAt)) return string.Empty;
+            if (string.IsNullOrEmpty(campaign.expiresAt)) return noExpirationText;
 
             if (!DateTime.TryParse(campaign.expiresAt, null, DateTimeStyles.RoundtripKind, out var expiresAt))
-                return string.Empty;
+                return noExpirationText;
 
             var days = (int)Math.Ceiling((expiresAt - DateTime.UtcNow).TotalDays);
-            return days <= 0 ? "Expired" : days.ToString();
+            return days <= 0 ? expiredText : days.ToString();
         }
         
         private void PopulateRows(Campaign campaign, Sprite currencyIconSprite)

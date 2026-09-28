@@ -49,7 +49,7 @@ namespace Ciao.RC.UI
             
 
             if (amountText != null)
-                amountText.text = $"{earnedAmount:0}";
+                amountText.text = $"{earnedAmount}";
 
             SetProgress(earnedAmount, totalAmount);
             gameObject.SetActive(true);
@@ -63,7 +63,7 @@ namespace Ciao.RC.UI
         public void SetProgress(float earnedAmount, float totalAmount)
         {
             if (amountText != null)
-                amountText.text = $"{earnedAmount:0}";
+                amountText.text = $"{earnedAmount}";
 
             if (progressBar != null)
                 progressBar.value = totalAmount > 0f ? earnedAmount / totalAmount : 0f;

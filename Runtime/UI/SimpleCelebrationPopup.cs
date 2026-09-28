@@ -37,8 +37,8 @@ namespace Ciao.RC.UI
             if (rewardAmountText != null)
             {
                 rewardAmountText.text = hasIcon
-                    ? $"+{milestone.rewardAmount:0}"
-                    : $"+{milestone.rewardAmount:0} {currencyName}";
+                    ? $"+{milestone.rewardAmount}"
+                    : $"+{milestone.rewardAmount} {currencyName}";
             }
 
             if (celebrationVisuals != null)
@@ -59,7 +59,7 @@ namespace Ciao.RC.UI
         private void SetDescriptionText(Milestone milestone, string currencyName)
         {
             if (descriptionText != null)
-                descriptionText.text = $"Completed '{milestone.description}' and earned {milestone.rewardAmount:0} {currencyName}!";
+                descriptionText.text = $"Completed '{milestone.description}' and earned {milestone.rewardAmount} {currencyName}!";
         }
     }
 }

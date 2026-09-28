@@ -45,8 +45,8 @@ namespace Ciao.RC.UI
             if (rewardText != null)
             {
                 rewardText.text = hasIcon
-                    ? $"+{milestone.rewardAmount:N0}"
-                    : $"+{milestone.rewardAmount:0} {RewardCenter.CurrencyName}";
+                    ? $"+{milestone.rewardAmount}"
+                    : $"+{milestone.rewardAmount} {RewardCenter.CurrencyName}";
             }
             
             

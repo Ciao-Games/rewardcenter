@@ -4,6 +4,24 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+# Changelog
+All notable changes to this package will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [0.0.9] - 2026-09-28
+
+### Fixed
+- Reward amounts now display with their real precision (`0.02`, `25.5`) instead of being rounded to integers.
+
+### Changed
+- Milestones Map "days remaining" text now shows "No expiry" when the campaign has no expiration date, instead of being blank.
+
+### Added
+- Serialized `completedText`, `expiredText`, and `noExpirationText` fields on MilestonesMapPopup for studio-side text customization and localization.
+
+
 ## [0.0.8] - 2026-09-16
 
 ### Changed
